@@ -1,9 +1,24 @@
-# conversao-temperatura-prometheus
+# Conversão Temperatura - Observabilidade
 
-Laboratório de criação da observabilidade da aplicação de Conversão Temperatura
+Laboratório de implementação da **observabilidade** na aplicação **Conversão Temperatura**.
 
-## Utilizando o projeto
+## Tecnologias utilizadas:
+
+- Node.js
+- Docker
+- Prometheus
+
+
+## Pré-requisitos:
+
+- Docker
+- Docker Compose
+
+
+## Utilizando o projeto:
 
 ```bash
+# Construindo e subindo os containers
+
 docker-compose up --build -d
 ```
