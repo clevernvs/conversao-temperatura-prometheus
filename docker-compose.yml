@@ -1,0 +1,26 @@
+services:
+  app:
+    image: clevernvs/devopspro-lab-ct:v1
+    ports:
+      - "${APP_PORT}:8080"
+    networks:
+      - devops-net
+
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    ports:
+      - "${PROMETHEUS_PORT}:9090"
+    volumes:
+      - prometheus_data:/prometheus
+    command:
+      - "--storage.tsdb.path=/prometheus"
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    networks:
+      - devops-net
+
+volumes:
+  prometheus_data:
+
+networks:
+  devops-net:
+    driver: bridge
