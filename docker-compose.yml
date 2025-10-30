@@ -12,6 +12,7 @@ services:
       - "${PROMETHEUS_PORT}:9090"
     volumes:
       - prometheus_data:/prometheus
+      - .prometheus.yaml:/etc/prometheus/prometheus.yml
     command:
       - "--storage.tsdb.path=/prometheus"
       - "--config.file=/etc/prometheus/prometheus.yml"
